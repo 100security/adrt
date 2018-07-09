@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="ADRT - Active Directory Report Tool">
+    <meta name="author" content="Marcos Henrique">
+
+    <title>:: 100SECURITY ::</title>
+
+    <link href="web/css/bootstrap.min.css" rel="stylesheet">
+    <script src="web/js/server.js"></script>	
+	<style>
+	.custom {
+		width: 200px !important;
+	}
+	.custom2 {
+		width: 100px !important;
+	}
+	</style>
+
+</head>
+<body>
+<br><br>
+<main role="main">
+<div class="container">
+<center>	
+
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td bgcolor="#f9f9f9" align="center" colspan="4"><h3 class="jumbotron-heading">ADRT - Active Directory Report Tool</h3></td>
+    </tr>
+    <tr>
+      <td align="center"><img src="web/img/all_users.png"></td>
+      <td align="center"><img src="web/img/domain_admins.png"></td>
+      <td align="center"><img src="web/img/disabled_users.png"></td>
+      <td align="center"><img src="web/img/last_logon.png"></td>
+    </tr>
+    <tr>
+      <td align="center"><a class="btn btn-outline-success custom" href="ad-reports/ad-users/ad-users-.html" target="_blank" id="data" role="button">All Users</a></td>
+      <td align="center"><a class="btn btn-outline-success custom" href="ad-reports/ad-admins/ad-admins-.html" target="_blank" id="data2"  role="button">Domain Admins</a></td>
+      <td align="center"><a class="btn btn-outline-success custom" href="ad-reports/ad-disabled/ad-disabled-.html" target="_blank" id="data3"  role="button">Disabled Users</a></td>
+      <td align="center"><a class="btn btn-outline-success custom" href="ad-reports/ad-lastlogon/ad-lastlogon-.html" target="_blank" id="data4"  role="button">Last Logon</a></td>
+    </tr>
+    <tr>
+      <td align="center"><img src="web/img/password_never_expires.png"></td>
+      <td align="center"><img src="web/img/all_groups.png"></td>
+      <td align="center"><img src="web/img/all_ous.png"></td>
+      <td align="center"><img src="web/img/all_computers.png"></td>
+    </tr>
+    <tr>
+      <td align="center"><a class="btn btn-outline-success custom" href="ad-reports/ad-neverexpires/ad-neverexpires-.html" target="_blank" id="data5" role="button">Password Never Expires</a></td>
+      <td align="center">
+		<div class="btn-group" role="group">
+			<a class="btn btn-outline-success custom2" href="ad-reports/ad-groups/ad-groups-.html" target="_blank" id="data6" role="button">All Groups</a>
+			<a class="btn btn-outline-success custom2" href="ad-reports/ad-membergroups/ad-membergroups-.html" target="_blank" id="data7" role="button">Members</a>
+		</div>
+	  </td>
+	  <td align="center"><a class="btn btn-outline-success custom" href="ad-reports/ad-ous/ad-ous-.html" target="_blank" id="data8" role="button">All OUs</a></td>
+      <td align="center"><a class="btn btn-outline-success custom" href="ad-reports/ad-computers/ad-computers-.html" target="_blank" id="data9" role="button">All Computers</a></td>
+    </tr>
+    <tr>
+      <td align="center"><img src="web/img/all_servers.png"></td>
+      <td align="center"><img src="web/img/domain_controllers.png"></td>
+      <td align="center"><img src="web/img/all_gpos.png"></td>
+      <td align="center"><img src="web/img/inventory.png"></td>
+    </tr>
+    <tr>
+      <td align="center"><a class="btn btn-outline-success custom" href="ad-reports/ad-servers/ad-servers-.html" target="_blank" id="data10" role="button">All Servers</a></td>
+      <td align="center"><a class="btn btn-outline-success custom" href="ad-reports/ad-dcs/ad-dcs-.html" target="_blank" id="data11" role="button">Domain Controllers</a></td>    
+      <td align="center">
+		<div class="btn-group" role="group">
+			<a class="btn btn-outline-success custom2" href="ad-reports/ad-gpos/ad-gpos-.html" target="_blank" id="data12" role="button">All GPOs</a>
+			<a class="btn btn-outline-success custom2" href="ad-reports/ad-gpos/gpos-html-" target="_blank" id="data13" role="button">All Details</a>
+		</div>
+	  </td>
+	  <td align="center"><a class="btn btn-outline-success custom" href="ad-reports/ad-inventory/ad-inventory-.html" target="_blank" id="data14" role="button">Inventory</a></td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+      <footer class="container">
+        <p class="float-right">
+		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#100security">About</button></p>
+		<a class="btn btn-success custom" href="javascript:reports();" target="_blank" role="button">Open All Reports</a>		  
+		<center>1 0 0 S E C U R I T Y &nbsp; - &nbsp; S e c u r i t y &nbsp; I n f o r m a t i o n</center>
+      </footer>
+	
+<div class="modal fade" id="100security" tabindex="-1" role="dialog" aria-labelledby="100security" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="100security">About</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <center>
+        <img src="web/img/marcoshenrique.jpg">
+		<br>
+		<h4>Marcos Henrique</h4>
+		E-mail: marcos@100security.com.br - +55 11 99259-3405<br><br>
+		<b>Follow-me:</b><br><br>
+		<a href="http://www.100security.com.br" target="_blank"><img src="web/img/100security.png"></a>&nbsp;
+		<a href="https://www.facebook.com/seguranca.da.informacao" target="_blank"><img src="web/img/facebook.png"></a>&nbsp;
+		<a href="https://twitter.com/100security" target="_blank"><img src="web/img/twitter.png"></a>&nbsp;
+		<a href="https://github.com/100security" target="_blank"><img src="web/img/github.png"></a>&nbsp;
+		<a href="http://www.youtube.com/user/videos100security" target="_blank"><img src="web/img/youtube.png"></a>&nbsp;
+		<a href="https://www.linkedin.com/in/user-marcoshenrique/" target="_blank"><img src="web/img/linkedin.png"></a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <script src="web/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="web/js/bootstrap.min.js"></script>
+    <script src="web/js/100security.js"></script>
+
+</body>
+</html>
