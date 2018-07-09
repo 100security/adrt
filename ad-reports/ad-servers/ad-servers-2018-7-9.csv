@@ -1,0 +1,5 @@
+﻿"Name","OperatingSystem","Description"
+"SRV-FLS-01","Windows Server 2008 R2 Standard","File Server"
+"SRV-SQL-01","Windows Server 2008 R2 Standard","SQL Server"
+"SRV-DMC-01","Windows Server 2012 Standard","Active Directory Primary"
+"SRV-DMC-02","Windows Server 2008 R2 Standard","Active Directory Secondary"

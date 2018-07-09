@@ -1,0 +1,7 @@
+﻿"Name","IPv4Address","LastlogonDate","OperatingSystem","Description"
+"SRV-FLS-01","192.168.1.60","01/07/2018 12:36:16","Windows Server 2008 R2 Standard","File Server"
+"SRV-DMC-02","192.168.1.221","01/07/2018 11:12:07","Windows Server 2008 R2 Standard","Active Directory Secondary"
+"SRV-DMC-01","192.168.1.220","09/07/2018 03:25:35","Windows Server 2012 Standard","Active Directory Primary"
+"NTB-WIN-01","192.168.1.164","01/07/2018 11:21:58","Windows 10 Pro","marcos.henrique"
+"DSK-WIN-01","192.168.1.20","11/02/2018 23:27:08","Windows 7 Professional","bill.gates"
+"SRV-SQL-01","192.168.1.230","01/07/2018 11:11:31","Windows Server 2008 R2 Standard","SQL Server"

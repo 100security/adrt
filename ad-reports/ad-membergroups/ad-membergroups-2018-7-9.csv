@@ -1,0 +1,90 @@
+﻿"Name","MemberOf","Members"
+"Performance Monitor Users","",""
+"Performance Log Users","",""
+"Network Configuration Operators","",""
+"RAS and IAS Servers","",""
+"Print Operators","",""
+"Pre-Windows 2000 Compatible Access","","CN=S-1-5-11,CN=ForeignSecurityPrincipals,DC=100security,DC=local
+"
+"IIS_IUSRS","","CN=S-1-5-17,CN=ForeignSecurityPrincipals,DC=100security,DC=local
+"
+"Hyper-V Administrators","",""
+"Guests","","CN=Domain Guests,CN=Users,DC=100security,DC=local
+CN=Guest,CN=Users,DC=100security,DC=local
+"
+"Microsoft","","CN=Bill Gates,OU=Microsoft,OU=Empresas,DC=100security,DC=local
+"
+"McAfee","","CN=John McAfee,OU=McAfee,OU=Empresas,DC=100security,DC=local
+"
+"Incoming Forest Trust Builders","",""
+"RDS Endpoint Servers","",""
+"Terminal Server License Servers","",""
+"Server Operators","",""
+"Schema Admins","CN=Denied RODC Password Replication Group,CN=Users,DC=100security,DC=local
+","CN=Administrator,CN=Users,DC=100security,DC=local
+"
+"WinRMRemoteWMIUsers__","",""
+"Windows Authorization Access Group","","CN=S-1-5-9,CN=ForeignSecurityPrincipals,DC=100security,DC=local
+"
+"Users","","CN=S-1-5-4,CN=ForeignSecurityPrincipals,DC=100security,DC=local
+CN=S-1-5-11,CN=ForeignSecurityPrincipals,DC=100security,DC=local
+CN=Domain Users,CN=Users,DC=100security,DC=local
+"
+"Read-only Domain Controllers","CN=Denied RODC Password Replication Group,CN=Users,DC=100security,DC=local
+",""
+"RDS Remote Access Servers","",""
+"RDS Management Servers","",""
+"Replicator","",""
+"Remote Management Users","",""
+"Remote Desktop Users","",""
+"Certificate Service DCOM Access","",""
+"Cert Publishers","CN=Denied RODC Password Replication Group,CN=Users,DC=100security,DC=local
+",""
+"Backup Operators","",""
+"Denied RODC Password Replication Group","","CN=Read-only Domain Controllers,CN=Users,DC=100security,DC=local
+CN=Domain Controllers,CN=Users,DC=100security,DC=local
+CN=krbtgt,CN=Users,DC=100security,DC=local
+CN=Group Policy Creator Owners,CN=Users,DC=100security,DC=local
+CN=Enterprise Admins,CN=Users,DC=100security,DC=local
+CN=Schema Admins,CN=Users,DC=100security,DC=local
+CN=Domain Admins,CN=Users,DC=100security,DC=local
+CN=Cert Publishers,CN=Users,DC=100security,DC=local
+"
+"Cryptographic Operators","",""
+"Cloneable Domain Controllers","",""
+"Account Operators","",""
+"Access Control Assistance Operators","",""
+"100Security","","CN=Marcos Henrique,OU=100Security,OU=Empresas,DC=100security,DC=local
+"
+"Apple","","CN=Steve Jobs,OU=Apple,OU=Empresas,DC=100security,DC=local
+"
+"Allowed RODC Password Replication Group","",""
+"Administrators","","CN=Administrator,CN=Users,DC=100security,DC=local
+CN=Enterprise Admins,CN=Users,DC=100security,DC=local
+CN=Domain Admins,CN=Users,DC=100security,DC=local
+"
+"Distributed COM Users","",""
+"Enterprise Read-only Domain Controllers","",""
+"Enterprise Admins","CN=Denied RODC Password Replication Group,CN=Users,DC=100security,DC=local
+CN=Administrators,CN=Builtin,DC=100security,DC=local
+","CN=Administrator,CN=Users,DC=100security,DC=local
+"
+"Domain Users","CN=Users,CN=Builtin,DC=100security,DC=local
+",""
+"Group Policy Creator Owners","CN=Denied RODC Password Replication Group,CN=Users,DC=100security,DC=local
+","CN=Administrator,CN=Users,DC=100security,DC=local
+"
+"Facebook","","CN=Mark Zuckerberg,OU=Facebook,OU=Empresas,DC=100security,DC=local
+"
+"Event Log Readers","",""
+"Domain Admins","CN=Denied RODC Password Replication Group,CN=Users,DC=100security,DC=local
+CN=Administrators,CN=Builtin,DC=100security,DC=local
+","CN=Administrator,CN=Users,DC=100security,DC=local
+"
+"DnsUpdateProxy","",""
+"DnsAdmins","",""
+"Domain Guests","CN=Guests,CN=Builtin,DC=100security,DC=local
+",""
+"Domain Controllers","CN=Denied RODC Password Replication Group,CN=Users,DC=100security,DC=local
+",""
+"Domain Computers","",""

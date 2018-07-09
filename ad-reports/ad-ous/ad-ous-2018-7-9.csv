@@ -1,0 +1,8 @@
+﻿"Name","Description","DistinguishedName"
+"Facebook","www.facebook.com","OU=Facebook,OU=Empresas,DC=100security,DC=local"
+"McAfee","www.mcafee.com","OU=McAfee,OU=Empresas,DC=100security,DC=local"
+"Microsoft","www.microsoft.com","OU=Microsoft,OU=Empresas,DC=100security,DC=local"
+"Empresas","Lista de Empresas","OU=Empresas,DC=100security,DC=local"
+"100Security","www.100security.com.br","OU=100Security,OU=Empresas,DC=100security,DC=local"
+"Apple","www.apple.com","OU=Apple,OU=Empresas,DC=100security,DC=local"
+"Domain Controllers","Default container for domain controllers","OU=Domain Controllers,DC=100security,DC=local"

@@ -1,0 +1,3 @@
+﻿"Site","Name","IPv4Address","OperatingSystem","OperatingSystemServicePack"
+"Default-First-Site-Name","SRV-DMC-02","192.168.1.221","Windows Server 2008 R2 Standard",
+"Default-First-Site-Name","SRV-DMC-01","192.168.1.220","Windows Server 2012 Standard",
