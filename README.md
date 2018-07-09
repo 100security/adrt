@@ -12,3 +12,4 @@ Como objetivo de colaborar com o dia-a-dia das tarefas diárias dos Administrado
 ![](http://www.100security.com.br/wp-content/uploads/2018/07/adrt08.jpg)
 
 Fonte: http://www.100security.com.br/adrt/
+Vìdeo: https://www.youtube.com/watch?v=KuEjGZSLPJE&t=1s
