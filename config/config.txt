@@ -1,0 +1,20 @@
+[0] Start Array
+# - - - - - - - - - - - - - - - - - - - - - #
+# Warning:                                  #
+# Do not remove any lines from this file.   #
+# Change only lines: 8, 10, 12, 14, 16, 18  #
+#                                           #
+# Company Name                              #
+100SECURITY
+# Owner/Analyst                             #
+Marcos Henrique
+# Mail Server                               #
+email.100security.com.br
+# Port                                      #
+25
+# From                                      #
+report@100security.com.br
+# To (mail1@domain.com,mail2@domain.com)    #
+marcos@100security.com.br
+#                                           #
+# - - - - - - - - - - - - - - - - - - - - - #
