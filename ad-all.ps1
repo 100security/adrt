@@ -20,6 +20,8 @@
 .\ad-users.ps1
 # Domain Admins
 .\ad-admins.ps1
+# Enterprise Admins
+.\ad-enterprise-admins.ps1
 # Disabled Users
 .\ad-disabled.ps1
 # LastLogon
@@ -45,7 +47,7 @@
 #-------------------------------------------------------------------#
 $report = $null
 $table = $null
-$date = Get-Date -format "yyyy-M-d"
+$date = Get-Date -format "yyyy-MM-dd"
 $mounth = Get-Date -format "MMM"
 $directorypath = (Get-Item -Path ".\").FullName
 $path = "ad-reports\ad-all"
@@ -77,6 +79,8 @@ $t_dcs = (Get-ADDomainController -Filter *).count
 $t_gpos = (Get-GPO -All).count 
 #-- Domain Admins
 $t_da = (Get-ADGroupMember -Identity "Domain Admins").count
+#-- Enterprise Admins
+$t_ea = (Get-ADGroupMember -Identity "Enterprise Admins").count
  
 $domain = (Get-ADDomain).Forest
 
@@ -162,6 +166,7 @@ $message = $message + "<tr><td height='40'>Computers + Servers</td><td>$t_cs</td
 $message = $message + "<tr><td height='40'>Domain Controllers</td><td>$t_dcs</td></tr>"
 $message = $message + "<tr><td height='40'>GPOs</td><td>$t_gpos</td></tr>"
 $message = $message + "<tr><td height='40'>Domain Admins</td><td>$t_da</td></tr>"
+$message = $message + "<tr><td height='40'>Enterprise Admins</td><td>$t_ea</td></tr>"
 $message = $message + "<tr><td colspan='2' bgcolor='#DDEBF7' height='40'><b>Information Security</b></td></tr>"
 $message = $message + "</table>"
 
@@ -171,18 +176,19 @@ $destination = "$path\ad-$date"
 
 $01 = "$directorypath\ad-reports\ad-users\ad-users-$date.html"
 $02 = "$directorypath\ad-reports\ad-admins\ad-admins-$date.html"
-$03 = "$directorypath\ad-reports\ad-disabled\ad-disabled-$date.html"
-$04 = "$directorypath\ad-reports\ad-lastlogon\ad-lastlogon-$date.html"
-$05 = "$directorypath\ad-reports\ad-neverexpires\ad-neverexpires-$date.html"
-$06 = "$directorypath\ad-reports\ad-groups\ad-groups-$date.html"
-$07 = "$directorypath\ad-reports\ad-membergroups\ad-membergroups-$date.html"
+$03 = "$directorypath\ad-reports\ad-disabled\ad-enterprise-admins-$date.html"
+$04 = "$directorypath\ad-reports\ad-disabled\ad-disabled-$date.html"
+$05 = "$directorypath\ad-reports\ad-lastlogon\ad-lastlogon-$date.html"
+$06 = "$directorypath\ad-reports\ad-neverexpires\ad-neverexpires-$date.html"
+$07 = "$directorypath\ad-reports\ad-groups\ad-groups-$date.html"
+$08 = "$directorypath\ad-reports\ad-membergroups\ad-membergroups-$date.html"
 $08 = "$directorypath\ad-reports\ad-ous\ad-ous-$date.html"
-$09 = "$directorypath\ad-reports\ad-computers\ad-computers-$date.html"
-$10 = "$directorypath\ad-reports\ad-servers\ad-servers-$date.html"
-$11 = "$directorypath\ad-reports\ad-dcs\ad-dcs-$date.html"
-$12 = "$directorypath\ad-reports\ad-gpos\ad-gpos-$date.html"
-$13 = "$directorypath\ad-reports\ad-gpos\gpos-html-$date.zip"
-$14 = "$directorypath\ad-reports\ad-inventory\ad-inventory-$date.html"
+$10 = "$directorypath\ad-reports\ad-computers\ad-computers-$date.html"
+$11 = "$directorypath\ad-reports\ad-servers\ad-servers-$date.html"
+$12 = "$directorypath\ad-reports\ad-dcs\ad-dcs-$date.html"
+$13 = "$directorypath\ad-reports\ad-gpos\ad-gpos-$date.html"
+$14 = "$directorypath\ad-reports\ad-gpos\gpos-html-$date.zip"
+$15 = "$directorypath\ad-reports\ad-inventory\ad-inventory-$date.html"
 
 Copy-Item -Path $01 -Filter *.html -Destination $destination -Force
 Copy-Item -Path $02 -Filter *.html -Destination $destination -Force
@@ -196,17 +202,18 @@ Copy-Item -Path $09 -Filter *.html -Destination $destination -Force
 Copy-Item -Path $10 -Filter *.html -Destination $destination -Force
 Copy-Item -Path $11 -Filter *.html -Destination $destination -Force
 Copy-Item -Path $12 -Filter *.html -Destination $destination -Force
-Copy-Item -Path $13 -Filter *.zip -Destination $destination -Force
-Copy-Item -Path $14 -Filter *.html -Destination $destination -Force
+Copy-Item -Path $13 -Filter *.html -Destination $destination -Force
+Copy-Item -Path $14 -Filter *.zip -Destination $destination -Force
+Copy-Item -Path $15 -Filter *.html -Destination $destination -Force
 
 #-- Send report by email
-$Subject = "[ Report-$mounth ] Active Directory - All"
-$SmtpServer	= $config[11]
-$Port = $config[13]
-$From = $config[15]
-$To = $config[17]
+#$Subject = "[ Report-$mounth ] Active Directory - All"
+#$SmtpServer	= $config[11]
+#$Port = $config[13]
+#$From = $config[15]
+#$To = $config[17]
 
-Send-MailMessage -From $From -To $To -Subject $Subject -Attachments $01,$02,$03,$04,$05,$06,$07,$08,$09,$10,$11,$12,$13,$14 -bodyashtml -Body $message -SmtpServer $SmtpServer -Port $Port
+#Send-MailMessage -From $From -To $To -Subject $Subject -Attachments $01,$02,$03,$04,$05,$06,$07,$08,$09,$10,$11,$12,$13,$14,$15 -bodyashtml -Body $message -SmtpServer $SmtpServer -Port $Port
 
 cls
 Invoke-Item $directorypath\index.html

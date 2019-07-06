@@ -18,12 +18,14 @@
 
 $report = $null
 $table = $null
-$date = Get-Date -format "yyyy-M-d"
+$date = Get-Date -format "yyyy-MM-dd"
 $mounth = Get-Date -format "MMM"
 $directorypath = (Get-Item -Path ".\").FullName
 $path = "ad-reports\ad-admins"
-$html = "$path\ad-admins-$date.html"
-$csv = "$path\ad-admins-$date.csv"
+#$html = "$path\ad-admins-$date.html"
+#$csv = "$path\ad-admins-$date.csv"
+$html = "$path\ad-admins.html"
+$csv = "$path\ad-admins.csv"
 
 #-- Domain Admins
 $t_da = (Get-ADGroupMember -Identity "Domain Admins").count
@@ -112,12 +114,12 @@ $report | Out-File $html -Encoding Utf8
 $result | Sort Company | Export-Csv $csv -NoTypeInformation -Encoding Utf8
 
 #-- Send report by email
-$Subject = "[ Report-$mounth ] Active Directory - Domain Admins"
-$SmtpServer	= $config[11]
-$Port = $config[13]
-$From = $config[15]
-$To = $config[17]
+#$Subject = "[ Report-$mounth ] Active Directory - Domain Admins"
+#$SmtpServer	= $config[11]
+#$Port = $config[13]
+#$From = $config[15]
+#$To = $config[17]
 
-Send-MailMessage -From $From -To $To -Subject $Subject -Attachments $html,$csv -bodyashtml -Body $message -SmtpServer $SmtpServer -Port $Port
+#Send-MailMessage -From $From -To $To -Subject $Subject -Attachments $html,$csv -bodyashtml -Body $message -SmtpServer $SmtpServer -Port $Port
 
 cls

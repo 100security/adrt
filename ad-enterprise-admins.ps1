@@ -2,9 +2,9 @@
 .NAME
     ADRT - Active Directory Report Tool
 .DESCRIPTION
-    Extract the complete list of All Servers.
+    Extract the complete list of all Domain Admins.
 .EXAMPLE
-    PS C:\adrt> .\ad-servers.ps1
+    PS C:\adrt> .\ad-admins.ps1
 .NOTES
     Name: Marcos Henrique
 	E-mail: marcos@100security.com.br
@@ -21,14 +21,14 @@ $table = $null
 $date = Get-Date -format "yyyy-MM-dd"
 $mounth = Get-Date -format "MMM"
 $directorypath = (Get-Item -Path ".\").FullName
-$path = "ad-reports\ad-servers"
-#$html = "$path\ad-servers-$date.html"
-#$csv = "$path\ad-servers-$date.csv"
-$html = "$path\ad-servers.html"
-$csv = "$path\ad-servers.csv"
+$path = "ad-reports\ad-enterprise-admins"
+#$html = "$path\ad-enterprise-admins-$date.html"
+#$csv = "$path\ad-enterprise-admins-$date.csv"
+$html = "$path\ad-enterprise-admins.html"
+$csv = "$path\ad-enterprise-admins.csv"
 
-#-- All Servers
-$t_s = (Get-ADComputer -Filter { OperatingSystem -Like '*Windows Server*' }).count 
+#-- Enterprise Admins
+$t_da = (Get-ADGroupMember -Identity "Enterprise Admins").count
 $domain = (Get-ADDomain).Forest
 
 # Config
@@ -40,15 +40,15 @@ $owner = $config[9]
 Import-Module ActiveDirectory
 
 #-- Show Total
-$table += "<center><h3><b>Total Servers: <font color=red>$t_s</font></b></h3></center>"
+$table += "<center><h3><b>Enterprise Admins: <font color=red>$t_da</font></b></h3></center>"
 
 #-- Filter
-$servers = @(Get-ADComputer -Filter { OperatingSystem -Like '*Windows Server*' } -Properties OperatingSystem, Description)
+$admins = @(Get-ADGroupMember -Identity "Enterprise Admins")
 
-$result = @($servers | Select-Object Name, OperatingSystem, Description)
+$result = @($admins | Select-Object Name, SamAccountName)
 
 #-- Order by (A-Z)
-$result = $result | Sort "Description"
+$result = $result | Sort "Name"
 
 #-- Display result on screen
 #$result | ft -auto 
@@ -73,7 +73,7 @@ $title=
 		<table width='100%' border='0' cellpadding='0' cellspacing='0'>
 		<tr>
 		<td bgcolor='#F9F9F9'>
-		<font face='Calibri' size='5px'><b>Active Directory - All Servers</b></font>
+		<font face='Calibri' size='5px'><b>Active Directory - Enterprise Admins</b></font>
 		<H3 align='center'>Company: <font color=red>$company</font> - Domain: <font color=red>$domain</font> - Date: <font color=red>$date</font> - Owner: <font color=red>$owner</font></H3>
 		</td>
 		</tr>
@@ -91,7 +91,7 @@ $footer=
 		</td>
 		</tr>
 		</table>
-		"	
+		"
 $message = "</table><style>"
 $message = $message + "BODY{font-family: Calibri;font-size:16;font-color: #000000}"
 $message = $message + "TABLE{margin-left:auto;margin-right:auto;width: 800px;border-width: 1px;border-style: solid;border-color: black;border-collapse: collapse;}"
@@ -101,7 +101,7 @@ $message = $message + "</style>"
 $message = $message + "<table width='300px' heigth='500px' align='center'>"
 $message = $message + "<tr><td colspan='2' bgcolor='#DDEBF7' height='40'><b>Active Directory</b></td></tr>"
 $message = $message + "<tr><td bgcolor='#F9F9F9' height='40'>Description</td><td bgcolor='#F9F9F9' height='40'>Total</td></tr>"
-$message = $message + "<tr><td height='40'>Windows Servers</td><td>$t_s</td></tr>"
+$message = $message + "<tr><td height='40'>Enterprise Admins</td><td>$t_da</td></tr>"
 $message = $message + "<tr><td colspan='2' bgcolor='#DDEBF7' height='40'><b>Information Security</b></td></tr>"
 $message = $message + "</table>"
 
@@ -114,7 +114,7 @@ $report | Out-File $html -Encoding Utf8
 $result | Sort Company | Export-Csv $csv -NoTypeInformation -Encoding Utf8
 
 #-- Send report by email
-#$Subject = "[ Report-$mounth ] Active Directory - All Servers"
+#$Subject = "[ Report-$mounth ] Active Directory - Enterprise Admins"
 #$SmtpServer	= $config[11]
 #$Port = $config[13]
 #$From = $config[15]

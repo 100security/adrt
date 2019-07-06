@@ -18,12 +18,14 @@
 
 $report = $null
 $table = $null
-$date = Get-Date -format "yyyy-M-d"
+$date = Get-Date -format "yyyy-MM-dd"
 $mounth = Get-Date -format "MMM"
 $directorypath = (Get-Item -Path ".\").FullName
 $path = "ad-reports\ad-users"
-$html = "$path\ad-users-$date.html"
-$csv = "$path\ad-users-$date.csv"
+#$html = "$path\ad-users-$date.html"
+#$csv = "$path\ad-users-$date.csv"
+$html = "$path\ad-users.html"
+$csv = "$path\ad-users.csv"
 
 #-- All Users
 $t_u = (Get-ADUser -filter *).count
@@ -80,7 +82,7 @@ $title=
 		<table width='100%' border='0' cellpadding='0' cellspacing='0'>
 		<tr>
 		<td bgcolor='#F9F9F9'>
-		<font face='Calibri' size='5px'><b>Active Directory</b></font>
+		<font face='Calibri' size='5px'><b>Active Directory - All Users</b></font>
 		<H3 align='center'>Company: <font color=red>$company</font> - Domain: <font color=red>$domain</font> - Date: <font color=red>$date</font> - Owner: <font color=red>$owner</font></H3>
 		</td>
 		</tr>
@@ -123,12 +125,12 @@ $report | Out-File $html -Encoding Utf8
 $result | Sort Company | Export-Csv $csv -NoTypeInformation -Encoding Utf8
 
 #-- Send report by email
-$Subject = "[ Report-$mounth ] Active Directory - All Users"
-$SmtpServer	= $config[11]
-$Port = $config[13]
-$From = $config[15]
-$To = $config[17]
+#$Subject = "[ Report-$mounth ] Active Directory - All Users"
+#$SmtpServer	= $config[11]
+#$Port = $config[13]
+#$From = $config[15]
+#$To = $config[17]
 
-Send-MailMessage -From $From -To $To -Subject $Subject -Attachments $html,$csv -bodyashtml -Body $message -SmtpServer $SmtpServer -Port $Port
+#Send-MailMessage -From $From -To $To -Subject $Subject -Attachments $html,$csv -bodyashtml -Body $message -SmtpServer $SmtpServer -Port $Port
 
 cls

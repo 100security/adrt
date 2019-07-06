@@ -36,19 +36,20 @@ function Show-Menu
 	Write-Host "                                   [ 00 ] - Config Tool"
 	Write-Host "                                   [ 01 ] - All Users"
 	Write-Host "                                   [ 02 ] - Domain Admins"
-	Write-Host "                                   [ 03 ] - Disabled Users" 
-	Write-Host "                                   [ 04 ] - Last Logon"
-	Write-Host "                                   [ 05 ] - Password Never Expires"
-	Write-Host "                                   [ 06 ] - All Groups" 
-	Write-Host "                                   [ 07 ] - All Member Groups" 
-	Write-Host "                                   [ 08 ] - All OUs"
-	Write-Host "                                   [ 09 ] - All Computers"
-	Write-Host "                                   [ 10 ] - All Servers"   
-	Write-Host "                                   [ 11 ] - Domain Controllers"
-	Write-Host "                                   [ 12 ] - All GPOs"
-	Write-Host "                                   [ 13 ] - Inventory"
-	Write-Host "                                   [ 14 ] - All Reports"  
-	Write-Host "                                   [ 15 ] - Delete old Reports"  
+	Write-Host "                                   [ 03 ] - Enterprise Admins"
+	Write-Host "                                   [ 04 ] - Disabled Users" 
+	Write-Host "                                   [ 05 ] - Last Logon"
+	Write-Host "                                   [ 06 ] - Password Never Expires"
+	Write-Host "                                   [ 07 ] - All Groups" 
+	Write-Host "                                   [ 08 ] - All Member Groups" 
+	Write-Host "                                   [ 09 ] - All OUs"
+	Write-Host "                                   [ 10 ] - All Computers"
+	Write-Host "                                   [ 11 ] - All Servers"   
+	Write-Host "                                   [ 12 ] - Domain Controllers"
+	Write-Host "                                   [ 13 ] - All GPOs"
+	Write-Host "                                   [ 14 ] - Inventory"
+	Write-Host "                                   [ 15 ] - All Reports"  
+	Write-Host "                                   [ 16 ] - Delete old Reports"  
 	Write-Host "                                   [ 99 ] - Exit"
 	Write-Host ""	 
 	Write-Host " + - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +"
@@ -70,44 +71,48 @@ do
 	.\ad-admins.ps1
 	} '03' {
 	cls
-	.\ad-disabled.ps1
+	.\ad-enterprise-admins.ps1
 	} '04' {
 	cls
-	.\ad-lastlogon.ps1
+	.\ad-disabled.ps1
 	} '05' {
 	cls
-	.\ad-neverexpires.ps1
+	.\ad-lastlogon.ps1
 	} '06' {
 	cls
-	.\ad-groups.ps1
+	.\ad-neverexpires.ps1
 	} '07' {
 	cls
-	.\ad-membergroups.ps1
+	.\ad-groups.ps1
 	} '08' {
 	cls
-	.\ad-ous.ps1
+	.\ad-membergroups.ps1
 	} '09' {
 	cls
-	.\ad-computers.ps1
+	.\ad-ous.ps1
 	} '10' {
 	cls
-	.\ad-servers.ps1
+	.\ad-computers.ps1
 	} '11' {
 	cls
-	.\ad-dcs.ps1
+	.\ad-servers.ps1
 	} '12' {
 	cls
-	.\ad-gpos.ps1
+	.\ad-dcs.ps1
 	} '13' {
 	cls
-	.\ad-inventory.ps1
+	.\ad-gpos.ps1
 	} '14' {
 	cls
-	.\ad-all.ps1
+	.\ad-inventory.ps1
 	} '15' {
+	cls
+	.\ad-all.ps1
+	} '16' {
 	cls
 	Remove-Item $delete\ad-users\* -Recurse -Force
 	Remove-Item $delete\ad-admins\* -Recurse -Force
+	Remove-Item $delete\ad-enterprise-admins\* -Recurse -Force
 	Remove-Item $delete\ad-disabled\* -Recurse -Force
 	Remove-Item $delete\ad-lastlogon\* -Recurse -Force
 	Remove-Item $delete\ad-neverexpires\* -Recurse -Force

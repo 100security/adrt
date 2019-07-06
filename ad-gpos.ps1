@@ -18,15 +18,20 @@
 
 $report = $null
 $table = $null
-$date = Get-Date -format "yyyy-M-d"
+$date = Get-Date -format "yyyy-MM-dd"
 $mounth = Get-Date -format "MMM"
 $directorypath = (Get-Item -Path ".\").FullName
 $path = "ad-reports\ad-gpos"
-$html = "$path\ad-gpos-$date.html"
-$csv = "ad-reports\ad-gpos\ad-gpos-$date.csv"
-$zip = "$path\gpos-html-$date.zip"
-new-item -type directory -path "$path\gpos-html-$date" -Force
-$gpos_html = "$path\gpos-html-$date\"
+#$html = "$path\ad-gpos-$date.html"
+#$csv = "ad-reports\ad-gpos\ad-gpos-$date.csv"
+#$zip = "$path\gpos-html-$date.zip"
+#new-item -type directory -path "$path\gpos-html-$date" -Force
+#$gpos_html = "$path\gpos-html-$date\"
+$html = "$path\ad-gpos.html"
+$csv = "ad-reports\ad-gpos\ad-gpos.csv"
+$zip = "$path\gpos-html.zip"
+new-item -type directory -path "$path\gpos-html" -Force
+$gpos_html = "$path\gpos-html\"
 
 #-- All GPOs
 $t_gpos = (Get-GPO -All).count 
@@ -89,7 +94,7 @@ $title=
 $footer=
 		"
 		<br><br>
-		<center><a href='gpos-html-$date' target='_blank'>View GPOs</a></center>
+		<center><a href='gpos-html' target='_blank'>View GPOs</a></center>
 		<br><br>
 		<table width='100%' border='0' cellpadding='0' cellspacing='0'>
 		<tr>
@@ -118,18 +123,18 @@ $report = $format + $title + $table + $footer
 $report | Out-File $html -Encoding Utf8
 
 #-- Compact GOPs (ad-gpos-$date.zip)
-Compress-Archive -Path $gpos_html -DestinationPath $path\gpos-html-$date.zip -Force
+Compress-Archive -Path $gpos_html -DestinationPath $path\gpos-html.zip -Force
 
 #-- Export to CSV
 $result | Sort Company | Export-Csv $csv -NoTypeInformation -Encoding Utf8
 
 #-- Send report by email
-$Subject = "[ Report-$mounth ] Active Directory - All GPOs"
-$SmtpServer	= $config[11]
-$Port = $config[13]
-$From = $config[15]
-$To = $config[17]
+#$Subject = "[ Report-$mounth ] Active Directory - All GPOs"
+#$SmtpServer	= $config[11]
+#$Port = $config[13]
+#$From = $config[15]
+#$To = $config[17]
 
-Send-MailMessage -From $From -To $To -Subject $Subject -Attachments $html,$csv,$zip -bodyashtml -Body $message -SmtpServer $SmtpServer -Port $Port
+#Send-MailMessage -From $From -To $To -Subject $Subject -Attachments $html,$csv,$zip -bodyashtml -Body $message -SmtpServer $SmtpServer -Port $Port
 
 cls
