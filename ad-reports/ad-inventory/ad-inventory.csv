@@ -1,0 +1,7 @@
+﻿"Name","IPv4Address","LastlogonDate","OperatingSystem","Description"
+"WIN-2008","192.168.0.20","18/06/2019 22:29:58","Windows Server 2008 R2 Standard",
+"DC-2012","192.168.0.10","06/07/2019 09:10:47","Windows Server 2012 Standard",
+"WIN-XP","192.168.0.50","20/06/2019 09:48:17","Windows XP Professional",
+"WIN-10","192.168.0.40","20/06/2019 09:46:26","Windows 10 Pro",
+"XPS","169.254.165.161","06/07/2019 09:31:01","Windows 10 Pro",
+"SQL-2008","192.168.0.30","20/06/2019 09:44:36","Windows Server 2008 R2 Standard",

@@ -1,0 +1,5 @@
+﻿"Company","St","SamAccountName","Name","Mail","Department","Title","PasswordNeverExpires","Enabled","Created","Modified","Info"
+,,"Administrator","Administrator",,,,"False","True","18/06/2019 22:21:29","06/07/2019 09:30:43",
+,,"Guest","Guest",,,,"True","False","18/06/2019 22:21:29","18/06/2019 22:21:29",
+,,"krbtgt","krbtgt",,,,"False","False","18/06/2019 22:22:12","20/06/2019 08:57:43",
+,,"marcos","Marcos Henrique",,,,"True","True","18/06/2019 22:28:35","06/07/2019 09:31:01",
