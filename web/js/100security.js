@@ -127,22 +127,32 @@
 	href = href.split('.');
 	document.getElementById('data14').setAttribute('href' , href[0] + ano + '-' + mes + '-' + dia + '.' + href[1] );
 	
+	var data15 = new Date();
+	var ano = data15.getFullYear();
+	var mes = (data15.getMonth() +1);
+	var dia = data15.getDate();
+	
+	var href = document.getElementById('data14').getAttribute('href');
+	href = href.split('.');
+	document.getElementById('data14').setAttribute('href' , href[0] + ano + '-' + mes + '-' + dia + '.' + href[1] );
+	
 	function reports() {
 	var data = new Date();
 	var ano = data.getFullYear();
 	var mes = (data.getMonth() +1);
 	var dia = data.getDate();
-	window.open('ad-reports/ad-users/ad-users-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-admins/ad-admins-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-disabled/ad-disabled-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-lastlogon/ad-lastlogon-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-neverexpires/ad-neverexpires-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-groups/ad-groups-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-membergroups/ad-membergroups-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-ous/ad-ous-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-computers/ad-computers-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-servers/ad-servers-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-dcs/ad-dcs-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-gpos/ad-gpos-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
-	window.open('ad-reports/ad-inventory/ad-inventory-'+ ano + '-' + mes + '-' + dia +'.html' ,'_blank');
+	window.open('ad-reports/ad-users/ad-users.html' ,'_blank');
+	window.open('ad-reports/ad-admins/ad-admins.html' ,'_blank');
+	window.open('ad-reports/ad-enterprise-admins/ad-enterprise-admins.html' ,'_blank');
+	window.open('ad-reports/ad-disabled/ad-disabled.html' ,'_blank');
+	window.open('ad-reports/ad-lastlogon/ad-lastlogon.html' ,'_blank');
+	window.open('ad-reports/ad-neverexpires/ad-neverexpires.html' ,'_blank');
+	window.open('ad-reports/ad-groups/ad-groups.html' ,'_blank');
+	window.open('ad-reports/ad-membergroups/ad-membergroups.html' ,'_blank');
+	window.open('ad-reports/ad-ous/ad-ous.html' ,'_blank');
+	window.open('ad-reports/ad-computers/ad-computers.html' ,'_blank');
+	window.open('ad-reports/ad-servers/ad-servers.html' ,'_blank');
+	window.open('ad-reports/ad-dcs/ad-dcs.html' ,'_blank');
+	window.open('ad-reports/ad-gpos/ad-gpos.html' ,'_blank');
+	window.open('ad-reports/ad-inventory/ad-inventory.html' ,'_blank');
 	}
