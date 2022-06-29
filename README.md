@@ -1,5 +1,4 @@
 # ADRT
-
 Active Directory Report Tool
 
 # Descrição
@@ -12,7 +11,7 @@ Como objetivo de colaborar com o dia-a-dia das tarefas diárias dos Administrado
 ![](https://www.100security.com.br/images/adrt-10.jpg)
 
 # Artigo 
-http://www.100security.com.br/adrt
+www.100security.com.br/adrt
 
 # Video
-https://www.youtube.com/watch?v=KuEjGZSLPJE&t
+www.youtube.com/watch?v=KuEjGZSLPJE&t
